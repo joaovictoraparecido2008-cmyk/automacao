@@ -13,5 +13,7 @@ pyautogui.write(musica)
 pyautogui.press('enter')
 #clicar 
 time.sleep(3)
-
+play = pyautogui.locateOnScreen('play.png', confidence=0.7)
+pyautogui.click(play)
 #fechar aba
+pyautogui.hotkey('win', 'down')
