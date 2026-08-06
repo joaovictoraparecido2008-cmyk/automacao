@@ -1,7 +1,10 @@
 #bibliotecas
 import pyautogui
+
 import time
+
 import subprocess
+
 #pergunta
 def pesquisar_musica(): #função para spotify
     musica = input("Qual musica voce quer pesquisar? ")
@@ -21,3 +24,4 @@ def pesquisar_musica(): #função para spotify
 
     #minimize aba
     pyautogui.hotkey('win', 'down')
+
