@@ -7,6 +7,12 @@ import subprocess
 
 #pergunta
 def pesquisar_musica(): #função para spotify
+    print("==============================================")
+    print("=                                            =")
+    print("=                   spotify                  =")
+    print("=                                            =")
+    print("==============================================")
+    
     musica = input("Qual musica voce quer pesquisar? ")
     #abrir spotify
     subprocess.run("spotify", shell=True)
