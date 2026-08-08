@@ -6,18 +6,26 @@ youtube_names = ['youtube', 'yt', 'y']
 spotify_names = ['spotify', 'sp', 's']
 while True:
     print("==============================================")
-    print("=                                            =") 
-    print("=            Central de Pesquisa             =")
-    print("=                                            =")
+    print("=                  AUTOMACAO                 =")
     print("==============================================")
 
-    plataforma = input("Qual plataforma deseja pesquisar? (youtube/spotify) ")
+    print('(1) youtube')
+    print('(2) spotify')
+    print('(3) sair')
 
-    if plataforma.lower() in youtube_names:
+    plataforma = input('digite um numero: ')
+
+    #chamada das funções de acordo com a escolha do usuario
+    if plataforma == '1':
         youtube() #chamada da função youtube
-    elif plataforma.lower() in spotify_names:
+
+    elif plataforma == '2':
         pesquisar_musica() #chamada da função pesquisar_musica
-    else:
-        print("Plataforma não reconhecida. Por favor, escolha entre 'youtube' ou 'spotify'.")
-    if input("Deseja pesquisar novamente? (s/n) ").lower() != 's':
+    elif plataforma == '3':
+        print("Saindo...")
         break
+    
+    else:
+        print("Opção inválida. Digite novamente.")
+
+        

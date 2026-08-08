@@ -10,7 +10,7 @@ lista = ['sim','s', 'yes','y']# lista de sins que pode se digitar para minimizar
 #funcvao principal do youtube
 def youtube_iniciar():
     #pergunta
-    pergunta = input("Qual video ou playlist deseja pesquisar? ")
+    pesquisar = input("Qual video ou playlist deseja pesquisar? ")
 
     #abrir o navegador e youtube
     subprocess.run("start opera https://www.youtube.com" , shell=True)
@@ -22,14 +22,20 @@ def youtube_iniciar():
         pyautogui.click(pesquisa)
 
         #digite 
-        pyautogui.write(pergunta)
+        pyautogui.write(pesquisar)
         pyautogui.press('enter')
        
         #clicar
         time.sleep(2)
-        pyautogui.click(x=835, y=170) #clica na aba videos 
-        time.sleep(2 )
-        pyautogui.click(x=609, y=326)#inicia o video
+
+        videos = pyautogui.locateOnScreen('videos.png', confidence=0.8)
+        if videos:
+         pyautogui.click(videos)
+
+         time.sleep(2 )
+         pyautogui.click(x=609, y=326)#inicia o video
+        else:
+         print("Botão de pesquisa não encontrado na tela.")
 
     else:
         print("Botão de pesquisa não encontrado na tela.")
@@ -45,14 +51,14 @@ def janela_flutuante():
 
     time.sleep(2)
 
-    minimizar = pyautogui.locateOnScreen('minimize.png',confidence=0.6)
+    minimizar = pyautogui.locateOnScreen('minimize.png',confidence=0.7)
     if minimizar:
-        time.sleep(1)
+        time.sleep(2)
         pyautogui.moveTo(minimizar, duration=0.4)
         pyautogui.click(minimizar)
 
         #minimize aba
-        time.sleep (1)
+    
         pyautogui.hotkey('win', 'down')
     else:
         print("Botão de minimizar não encontrado na tela.")
@@ -63,9 +69,7 @@ def janela_flutuante():
 def youtube():
     
     print("==============================================")
-    print("=                                            =")
     print("=            Pesquisa no YouTube             =")
-    print("=                                            =")
     print("==============================================")
 
 

@@ -8,26 +8,29 @@ import subprocess
 #pergunta
 def pesquisar_musica(): #função para spotify
     print("==============================================")
-    print("=                                            =")
     print("=                   spotify                  =")
-    print("=                                            =")
     print("==============================================")
     
-    musica = input("Qual musica voce quer pesquisar? ")
+    pesquisa_musica = input("Qual musica voce quer pesquisar? ")
     #abrir spotify
     subprocess.run("spotify", shell=True)
 
     #presquisar musica
     time.sleep(8)
     pyautogui.hotkey('ctrl', 'l')
-    pyautogui.write(musica)
+    pyautogui.write(pesquisa_musica)
     pyautogui.press('enter')
 
     #clicar 
     time.sleep(3)
-    play = pyautogui.locateOnScreen('play.png', confidence=0.7)
-    pyautogui.click(play)
+    botao_play = pyautogui.locateOnScreen('play.png', confidence=0.7)
 
-    #minimize aba
-    pyautogui.hotkey('win', 'down')
+    if botao_play:
+        pyautogui.moveTo(botao_play, duration=0.4)
+        pyautogui.click(botao_play)
+
+        #minimize aba
+        pyautogui.hotkey('win', 'down')
+    else:
+        print("Botão de play não encontrado na tela.")
 
