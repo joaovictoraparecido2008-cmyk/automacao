@@ -23,7 +23,7 @@ def pesquisar_musica(): #função para spotify
 
     #clicar 
     time.sleep(3)
-    botao_play = pyautogui.locateOnScreen('play.png', confidence=0.7)
+    botao_play = pyautogui.locateOnScreen('imagems\play.png', confidence=0.7)
 
     if botao_play:
         pyautogui.moveTo(botao_play, duration=0.4)

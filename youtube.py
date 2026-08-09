@@ -26,10 +26,11 @@ def youtube_iniciar():
         pyautogui.press('enter')
        
         #clicar
-        time.sleep(2)
+        time.sleep(4)
 
-        videos = pyautogui.locateOnScreen('imagems\videos.png', confidence=0.8)
-        if videos:
+        dock = pyautogui.locateOnScreen('imagems\dock.png', confidence=0.5)
+        if dock:
+         videos = pyautogui.locateOnScreen('imagems/videos.png',confidence=0.9)
          pyautogui.click(videos)
 
          time.sleep(2 )
