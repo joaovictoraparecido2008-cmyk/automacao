@@ -17,7 +17,7 @@ def youtube_iniciar():
     time.sleep(9)
 
     #PESQUISAR VIDEO or playlist
-    pesquisa = pyautogui.locateOnScreen('pesquisa.png', confidence=0.7)
+    pesquisa = pyautogui.locateOnScreen('imagems\pesquisa.png', confidence=0.7)
     if pesquisa:
         pyautogui.click(pesquisa)
 
@@ -26,10 +26,11 @@ def youtube_iniciar():
         pyautogui.press('enter')
        
         #clicar
-        time.sleep(2)
+        time.sleep(4)
 
-        videos = pyautogui.locateOnScreen('videos.png', confidence=0.8)
-        if videos:
+        dock = pyautogui.locateOnScreen('imagems\dock.png', confidence=0.5)
+        if dock:
+         videos = pyautogui.locateOnScreen('imagems/videos.png',confidence=0.9)
          pyautogui.click(videos)
 
          time.sleep(2 )
@@ -51,7 +52,7 @@ def janela_flutuante():
 
     time.sleep(2)
 
-    minimizar = pyautogui.locateOnScreen('minimize.png',confidence=0.7)
+    minimizar = pyautogui.locateOnScreen('imagems\minimize.png',confidence=0.7)
     if minimizar:
         time.sleep(2)
         pyautogui.moveTo(minimizar, duration=0.4)
