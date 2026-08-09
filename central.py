@@ -1,5 +1,5 @@
-from spotfy import pesquisar_musica
-from youtube import youtube
+from apps_automatizados.youtube import youtube
+from apps_automatizados.spotfy import pesquisar_musica
 
 #LISTA DE NOMES E ABREVIAMENTOS
 youtube_names = ['youtube', 'yt', 'y']
