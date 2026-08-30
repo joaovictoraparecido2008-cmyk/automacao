@@ -74,13 +74,6 @@ def youtube():
     print("==============================================")
 
 
-    minimizar = input("Deseja minimizar a aba do youtube? (sim/não) ")
 
     youtube_iniciar() #chamada da função youtube
-
-
-
-    if minimizar.lower() in lista:
-
-        janela_flutuante() #chamada da função janela_flutuante
 
